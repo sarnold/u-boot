@@ -41,6 +41,7 @@ secondary_harts_relocation_error:
 _start:
 #if CONFIG_IS_ENABLED(RISCV_MMODE)
 	csrr	a0, CSR_MHARTID
+	csrwi	0x7c1, 0
 #endif
 
 	/*
