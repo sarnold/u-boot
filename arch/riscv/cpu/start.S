@@ -42,7 +42,6 @@ _start:
 #if CONFIG_IS_ENABLED(RISCV_MMODE)
 	csrr	a0, CSR_MHARTID
 #endif
-	csrwi	0x7c1, 0
 
 	/*
 	 * Save hart id and dtb pointer. The thread pointer register is not

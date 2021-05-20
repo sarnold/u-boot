@@ -50,8 +50,6 @@ int cache_enable_ways(void)
 
 	enable = (volatile u32 *)(base + L2_CACHE_ENABLE);
 
-	printf("sifive: enabling cache ways: %u\n", ways);
-
 	/* memory barrier */
 	mb();
 #if CONFIG_IS_ENABLED(SIFIVE_FU540_L2CC_WAYENABLE_DIY)
