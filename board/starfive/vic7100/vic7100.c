@@ -1146,16 +1146,16 @@ int board_init(void)
 {
 	int ret = 0;
 
+	printf("vic7100 board init\n");
+
 	gd->bd->bi_boot_params = PHYS_SDRAM_0;
 
-#if CONFIG_IS_ENABLED(CACHE_WAYENABLE)
 	/* enable all cache ways */
 	ret = cache_enable_ways();
 	if (ret) {
-		debug("%s: could not enable cache ways\n", __func__);
+		printf("%s: could not enable cache ways\n", __func__);
 		return ret;
 	}
-#endif
 
 	return ret;
 }
